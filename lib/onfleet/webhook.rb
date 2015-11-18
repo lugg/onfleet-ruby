@@ -1,5 +1,7 @@
 module Onfleet
   class Webhook < Base
+    autoload :Payload, "onfleet/webhook/payload"
+
     # http://docs.onfleet.com/docs/webhooks#create-webhook
     def self.create(params = {})
       response = post "webhooks", params

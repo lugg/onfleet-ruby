@@ -14,10 +14,17 @@ module Onfleet
     key || raise("Onfleet.key not set")
   end
 
-  autoload :Base,     "onfleet/base"
+  autoload :Base, "onfleet/base"
   autoload :Resource, "onfleet/resource"
-  autoload :Task,     "onfleet/task"
-  autoload :Mash,     "onfleet/mash"
+  autoload :Mash, "onfleet/mash"
+  autoload :Organization, "onfleet/organization"
+  autoload :Administrator, "onfleet/administrator"
+  autoload :Worker, "onfleet/worker"
+  autoload :Team, "onfleet/team"
+  autoload :Destination, "onfleet/destination"
+  autoload :Task, "onfleet/task"
+  autoload :Recipient, "onfleet/recipient"
+  autoload :Webhook, "onfleet/webhook"
 
   if onfleet_key = ENV["ONFLEET_KEY"]
     Onfleet.key = onfleet_key
