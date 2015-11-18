@@ -26,5 +26,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rack"
   spec.add_development_dependency "webmock"
   spec.add_dependency "nestful", "~> 1.1.0"
-  spec.add_dependency "activesupport", "~> 4.2.5"
+  spec.add_dependency "activesupport", "~> 4.0.0"
 end
