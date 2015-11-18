@@ -1,10 +1,8 @@
 # Onfleet
----
 
 A full featured Ruby API client to http://onfleet.com
 
 # Usage
----
 
 Set the API key
 
