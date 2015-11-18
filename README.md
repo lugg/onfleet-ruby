@@ -10,7 +10,7 @@ Set the API key
 Onfleet.key = ENV["ONFLEET_KEY"]
 ```
 
-and your off to the races!
+and you're off to the races!
 
 See the [documentation](https://docs.onfleet.com) for more information.
 
