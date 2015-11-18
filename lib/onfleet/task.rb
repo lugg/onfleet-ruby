@@ -27,7 +27,7 @@ module Onfleet
 
     # http://docs.onfleet.com/docs/tasks#complete-task
     def self.complete(id, params = {})
-      response = put "tasks/#{id}/complete", completionDetails: params
+      response = post "tasks/#{id}/complete", completionDetails: params
       new(response)
     end
 
