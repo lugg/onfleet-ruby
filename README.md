@@ -13,3 +13,17 @@ Onfleet.key = ENV["ONFLEET_KEY"]
 and your off to the races!
 
 See the [documentation](https://docs.onfleet.com) for more information.
+
+### Modules
+
+```ruby
+Onfleet::Organization
+Onfleet::Administrator
+Onfleet::Worker
+Onfleet::Team
+Onfleet::Destination
+Onfleet::Task
+Onfleet::Recipient
+Onfleet::Webhook
+Onfleet::Webhook::Payload
+```
