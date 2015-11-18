@@ -14,7 +14,7 @@ module Onfleet
 
     # http://docs.onfleet.com/docs/administrators#update-administrator
     def self.update(id, params = {})
-      response = put "administrators/#{id}"
+      response = put "administrators/#{id}", params
       new(response)
     end
 
