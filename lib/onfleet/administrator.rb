@@ -19,7 +19,7 @@ module Onfleet
     end
 
     # http://docs.onfleet.com/docs/administrators#delete-administrator
-    def self.delete(id)
+    def self.destroy(id)
       !!delete("administrators/#{id}")
     end
 

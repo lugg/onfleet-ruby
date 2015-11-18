@@ -31,7 +31,7 @@ module Onfleet
     end
 
     # http://docs.onfleet.com/docs/tasks#delete-task
-    def self.delete(id)
+    def self.destroy(id)
       !!delete("tasks/#{id}")
     end
 

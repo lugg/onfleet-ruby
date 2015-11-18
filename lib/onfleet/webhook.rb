@@ -15,7 +15,7 @@ module Onfleet
     end
 
     # http://docs.onfleet.com/docs/webhooks#delete-webhook
-    def self.delete(id)
+    def self.destroy(id)
       !!delete("webhooks/#{id}")
     end
   end

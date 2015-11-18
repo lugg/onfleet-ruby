@@ -30,7 +30,7 @@ module Onfleet
     end
 
     # http://docs.onfleet.com/docs/workers#delete-worker
-    def self.delete(id)
+    def self.destroy(id)
       !!delete("workers/#{id}")
     end
 
