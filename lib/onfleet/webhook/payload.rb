@@ -15,7 +15,7 @@ module Onfleet
 
       # http://docs.onfleet.com/docs/webhooks
       def trigger
-        self["triggerName"].underscore.inquiry
+        triggerName.underscore.inquiry
       end
     end
   end
