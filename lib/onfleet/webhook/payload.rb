@@ -1,23 +1,10 @@
 require "rack"
 require "json"
-require "active_support/string_inquirer"
+require "active_support/core_ext/string"
 
 module Onfleet
   class Webhook
     class Payload < Mash
-      # http://docs.onfleet.com/docs/webhooks
-      TRIGGERS = %w(
-        task_started
-        task_eta
-        task_arrival
-        task_completed
-        task_failed
-        worker_duty
-        task_created
-        task_updated
-        task_deleted
-      )
-
       def initialize(env)
         request = Rack::Request.new(env)
         request.body.rewind
@@ -26,8 +13,9 @@ module Onfleet
         merge!(JSON.parse(body))
       end
 
+      # http://docs.onfleet.com/docs/webhooks
       def trigger
-        TRIGGERS[self["trigger"]].inquiry
+        self["triggerName"].underscore.inquiry
       end
     end
   end
