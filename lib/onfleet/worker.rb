@@ -19,7 +19,7 @@ module Onfleet
     # http://docs.onfleet.com/docs/workers#get-single-worker
     # TODO: Add missing query param stuff.
     def self.retrieve(id)
-      response = put "workers/#{id}"
+      response = get "workers/#{id}"
       new(response)
     end
 
