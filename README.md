@@ -10,7 +10,16 @@ Set the API key
 Onfleet.key = ENV["ONFLEET_KEY"]
 ```
 
-and you're off to the races!
+Do some stuff
+
+```ruby
+workers = Onfleet::Workers.all
+worker  = workers.first
+
+puts worker.phone
+
+Onfleet::Worker.update(worker.id, name: "Eric")
+```
 
 See the [documentation](https://docs.onfleet.com) for more information.
 
