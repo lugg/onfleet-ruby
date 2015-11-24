@@ -13,7 +13,7 @@ Onfleet.key = ENV["ONFLEET_KEY"]
 Do some stuff
 
 ```ruby
-workers = Onfleet::Workers.all
+workers = Onfleet::Worker.all
 worker  = workers.first
 
 puts worker.phone
