@@ -27,3 +27,8 @@ Onfleet::Recipient
 Onfleet::Webhook
 Onfleet::Webhook::Payload
 ```
+
+### Todo
+- [ ] Tests
+- [ ] Better error handling
+- [ ] camelCase keys to snake_case keys
