@@ -25,6 +25,7 @@ module Onfleet
   autoload :Task, "onfleet/task"
   autoload :Recipient, "onfleet/recipient"
   autoload :Webhook, "onfleet/webhook"
+  autoload :Errors, "onfleet/errors"
 
   if onfleet_key = ENV["ONFLEET_KEY"]
     Onfleet.key = onfleet_key

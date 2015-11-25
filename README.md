@@ -39,5 +39,5 @@ Onfleet::Webhook::Payload
 
 ### Todo
 - [ ] Tests
-- [ ] Better error handling
+- [x] Better error handling
 - [ ] camelCase keys to snake_case keys
