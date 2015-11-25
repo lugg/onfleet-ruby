@@ -106,13 +106,19 @@ module Onfleet
       rescue JSON::ParserError
         raise Errors::Error
       rescue Nestful::ResponseError => e
-        handle_api_error(e)
+        handle_response_error(e)
+      rescue Nestful::Error => e
+        handle_error(e)
       end
 
       response
     end
 
-    def self.handle_api_error(nestful_error)
+    def self.handle_error(nestful_error)
+      raise Errors::Error, message: nestful_error.message, nestful_error: nestful_error
+    end
+
+    def self.handle_response_error(nestful_error)
       response = nestful_error.response
 
       begin
@@ -133,7 +139,7 @@ module Onfleet
       when "404"
         raise create_error Errors::ResourceNotFound, *err_args
       when "409"
-        raise create_error Errors::PreconditionFailed, *err_args
+        raise create_error Errors::InvalidArgument, *err_args
       when "412"
         raise create_error Errors::PreconditionFailed, *err_args
       when "429"
@@ -147,7 +153,7 @@ module Onfleet
 
     def self.general_error(response_code, response_body)
       Errors::Error.new(
-        message: "Invalid response object from API: #{response_code.inspect} " + "(HTTP response code was #{response_code})",
+        message: "Invalid response object from API: #{response_body.inspect} " + "(HTTP response code was #{response_code})",
         http_status: response_code,
         http_body: response_body
       )
