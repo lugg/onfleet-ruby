@@ -18,7 +18,7 @@ module Onfleet
       return unless phone || name
 
       if phone
-        path = "recipients/phone/#{phone}"
+        path = "recipients/phone/#{URI::encode(phone)}"
       elsif name
         path = "recipients/name/#{URI::encode(name)}"
       end
