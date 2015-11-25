@@ -29,7 +29,7 @@ module Onfleet
 
     # http://docs.onfleet.com/docs/recipients#update-recipient
     def self.update(id, params = {})
-      response = put "tasks/#{id}", params
+      response = put "recipients/#{id}", params
       new(response)
     end
 
