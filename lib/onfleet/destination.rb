@@ -2,14 +2,14 @@ module Onfleet
   class Destination < Base
     # http://docs.onfleet.com/docs/destinations#get-single-destination
     def self.retrieve(id)
-      response = get "recipients/#{id}"
+      response = get "destinations/#{id}"
       new(response)
     rescue Nestful::ResourceNotFound
     end
 
     # http://docs.onfleet.com/docs/destinations#create-new-destination
     def self.create(params = {})
-      response = post "recipients", params
+      response = post "destinations", params
       new(response)
     end
 
