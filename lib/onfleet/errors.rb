@@ -47,6 +47,7 @@ module Onfleet
       end
     end
 
+    # https://gist.github.com/euskode/8a34b2152cb35ddeb659
     class InvalidContent < OnfleetError; end
     class InvalidCredentials < OnfleetError; end
     class ResourceNotFound < OnfleetError; end
