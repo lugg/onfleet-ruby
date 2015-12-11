@@ -167,21 +167,26 @@ module Onfleet
     def self.error_options(onfleet_error, response, nestful_error)
       onfleet_message = onfleet_error[:message]
 
-      {
-        # Errors::Error
-        message: onfleet_message[:message] || response.body.to_s,
+      options = {
+        message: (onfleet_message[:message] || response.body).to_s,
         http_status: response.code,
         http_body: response.body,
         http_headers: response.header.to_hash,
         json_body: onfleet_error,
-        nestful_error: nestful_error,
-        # Errors::OnfleetError
-        code: onfleet_message[:code],
-        error: onfleet_message[:error],
-        docs: onfleet_message[:docs],
-        request_id: onfleet_message[:request],
-        cause: onfleet_message[:cause]
+        nestful_error: nestful_error
       }
+
+      if onfleet_message.is_a?(Hash)
+        options.merge(
+          code: onfleet_message[:code],
+          error: onfleet_message[:error],
+          docs: onfleet_message[:docs],
+          request_id: onfleet_message[:request],
+          cause: onfleet_message[:cause]
+        )
+      else
+        options
+      end
     end
 
     def uri(*parts)

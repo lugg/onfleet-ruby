@@ -4,7 +4,7 @@ module Onfleet
     def self.retrieve(id)
       response = get "destinations/#{id}"
       new(response)
-    rescue Nestful::ResourceNotFound
+    rescue Errors::ResourceNotFound
     end
 
     # http://docs.onfleet.com/docs/destinations#create-new-destination

@@ -6,7 +6,7 @@ module Onfleet
       path = id ? "organizations/#{id}" : "organization"
       response = get path
       new(response)
-    rescue Nestful::ResourceNotFound
+    rescue Errors::ResourceNotFound
     end
   end
 end
