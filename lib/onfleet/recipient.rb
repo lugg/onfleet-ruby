@@ -23,7 +23,7 @@ module Onfleet
         path = "recipients/name/#{URI::encode(name)}"
       end
 
-      response = get path, params
+      response = get path
       new(response)
     rescue Errors::ResourceNotFound
     end
