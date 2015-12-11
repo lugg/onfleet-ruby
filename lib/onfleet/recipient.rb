@@ -4,7 +4,7 @@ module Onfleet
     def self.retrieve(id)
       response = get "recipients/#{id}"
       new(response)
-    rescue Onfleet::Errors::ResourceNotFound
+    rescue Errors::ResourceNotFound
     end
 
     # http://docs.onfleet.com/docs/recipients#create-new-recipient
@@ -25,7 +25,7 @@ module Onfleet
 
       response = get path, params
       new(response)
-    rescue Onfleet::Errors::ResourceNotFound
+    rescue Errors::ResourceNotFound
     end
 
     # http://docs.onfleet.com/docs/recipients#update-recipient
