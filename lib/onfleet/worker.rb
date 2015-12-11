@@ -21,6 +21,7 @@ module Onfleet
     def self.retrieve(id)
       response = get "workers/#{id}"
       new(response)
+    rescue Onfleet::Errors::ResourceNotFound
     end
 
     # http://docs.onfleet.com/docs/workers#update-worker

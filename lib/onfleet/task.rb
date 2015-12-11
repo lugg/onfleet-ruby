@@ -4,7 +4,7 @@ module Onfleet
     def self.retrieve(id)
       response = get "tasks/#{id}"
       new(response)
-    rescue Nestful::ResourceNotFound
+    rescue Onfleet::Errors::ResourceNotFound
     end
 
     # http://docs.onfleet.com/docs/tasks#create-task

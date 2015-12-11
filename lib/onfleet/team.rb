@@ -10,6 +10,7 @@ module Onfleet
     def self.retrieve(id)
       response = put "teams/#{id}"
       new(response)
+    rescue Onfleet::Errors::ResourceNotFound
     end
   end
 end
